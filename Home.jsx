@@ -1,27 +1,78 @@
-import { Text, Pressable, SafeAreaView, StyleSheet, View } from 'react-native';
+import { Component } from 'react';
+import { Text, Pressable, SafeAreaView, StyleSheet, View, ScrollView } from 'react-native';
 import { Card } from 'react-native-paper';
+
+class Subject1Scroll extends Component {
+  state = {
+      names: [
+         {'name': 'Quizlet 1', 'id': 1},
+         {'name': 'Quizlet 2', 'id': 2},
+         {'name': 'Quizlet 3', 'id': 3},
+      ]
+   }
+   render() {
+      return (
+         <View>
+            <ScrollView>
+               {
+                  this.state.names.map((item, index) => (
+                     <View key = {item.id} style = {styles.item}>
+                        <Text>{item.name}</Text>
+                     </View>
+                  ))
+               }
+            </ScrollView>
+         </View>
+      )
+   }
+   }
 
 export default function Launch() {
   return (
     <SafeAreaView style={styles.container}>
-      <Text style={styles.paragraph}>Welcome to the Button Link lol</Text>
-      <Text style={styles.subheading}>Ready to start studying?</Text>
+      <View style={styles.buttonBarContainer}>
       <Card>
         <View style={styles.buttonContainer}>
           <Pressable
-            style={styles.button}
-            onPress={() => alert('You pressed a button.')}>
-            <Text style={styles.buttonLabel}>Enter!</Text>
+              style={styles.button}
+              onPress={() => alert('Hi')}>
+              <Text style={styles.buttonLabel}>Subject 1</Text>
+            </Pressable>
+          </View>
+      </Card>
+      <Card>
+        <View style={styles.buttonContainer}>
+          <Pressable
+              style={styles.button}
+              onPress={() => alert('bye')}>
+              <Text style={styles.buttonLabel}>Subject 2</Text>
           </Pressable>
         </View>
       </Card>
+      <Card>
+        <View style={styles.buttonContainer}>
+          <Pressable
+              style={styles.button}
+              onPress={() => alert('bye')}>
+              <Text style={styles.buttonLabel}>Subject 3</Text>
+          </Pressable>
+        </View>
+      </Card>
+      </View>
+      <Subject1Scroll />
     </SafeAreaView>
   )
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    flexDirection: 'column',
+    justifyContent: 'center',
+    backgroundColor: '#ecf0f1',
+    padding: 8,
+  },
+  buttonBarContainer: {
+    flexDirection: 'row',
     justifyContent: 'center',
     backgroundColor: '#ecf0f1',
     padding: 8,
@@ -40,7 +91,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
   buttonContainer: {
-    width: 320,
+    width: 70,
     height: 68,
     marginHorizontal: 20,
     alignItems: 'center',
@@ -49,15 +100,26 @@ const styles = StyleSheet.create({
   },
   button: {
     borderRadius: 10,
-    width: '100%',
-    height: '100%',
+    width: '25%',
+    height: '10%',
     alignItems: 'center',
     justifyContent: 'center',
     flexDirection: 'row',
   },
   buttonLabel: {
-    fontSize: 20,
+    fontSize: 15,
     fontWeight: 'bold',
     textAlign: 'center',
+    position: 'absolute',
   },
+  item: {
+      flexDirection: 'row',
+      justifyContent: 'space-between',
+      alignItems: 'center',
+      padding: 30,
+      margin: 2,
+      borderColor: '#2a4944',
+      borderWidth: 1,
+      backgroundColor: 'white',
+   },
 });
