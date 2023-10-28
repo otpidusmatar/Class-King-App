@@ -1,71 +1,72 @@
-import { Component, useState } from 'react';
-import { Text, Pressable, SafeAreaView, StyleSheet, View, ScrollView } from 'react-native';
+import { useState } from 'react';
+import { Text, Pressable, SafeAreaView, StyleSheet, View } from 'react-native';
 import { Card } from 'react-native-paper';
 import { useNavigation } from '@react-navigation/native';
-
-class Subject1Scroll extends Component {
-  state = {
-      names: [
-         {'name': 'Quizlet 1', 'id': 1},
-         {'name': 'Quizlet 2', 'id': 2},
-         {'name': 'Quizlet 3', 'id': 3},
-      ]
-   }
-   render() {
-      return (
-         <View>
-            <ScrollView>
-               {
-                  this.state.names.map((item, index) => (
-                     <View key = {item.id} style = {styles.item}>
-                      <Pressable style={styles.buttonForList} onPress={() => this.props.navigation.navigate(item.name)}>
-                        <Text style={styles.buttonLabel}>{item.name}</Text>
-                      </Pressable>
-                     </View>
-                  ))
-               }
-            </ScrollView>
-         </View>
-      )
-   }
-   }
+import SubjectScrollList from './SubjectScrollList.jsx'
 
 export default function Launch() {
   const navigation = useNavigation();
+  const [chosenSubject, setChosenSubject] = useState(0);
+
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.buttonBarContainer}>
-      <Card onPress={() => alert('Hi')}>
+      <Card onPress={() => setChosenSubject(0)}>
         <View style={styles.buttonContainer}>
           <Pressable
               style={styles.button}
-              onPress={() => alert('Hi')}>
+              onPress={() => setChosenSubject(0)}>
               <Text style={styles.buttonLabel}>Subject 1</Text>
             </Pressable>
           </View>
       </Card>
-      <Card onPress={() => alert('bye')}>
+      <Card onPress={() => setChosenSubject(1)}>
         <View style={styles.buttonContainer}>
           <Pressable
               style={styles.button}
-              onPress={() => alert('bye')}>
+              onPress={() => setChosenSubject(1)}>
               <Text style={styles.buttonLabel}>Subject 2</Text>
           </Pressable>
         </View>
       </Card>
-      <Card onPress={() => alert('bye')}>
+      <Card onPress={() => setChosenSubject(2)}>
         <View style={styles.buttonContainer}>
           <Pressable
               style={styles.button}
-              onPress={() => alert('bye')}>
+              onPress={() => setChosenSubject(2)}>
               <Text style={styles.buttonLabel}>Subject 3</Text>
           </Pressable>
         </View>
       </Card>
       </View>
-      <Subject1Scroll navigation={navigation} />
+      <SubjectScrollList navigation={navigation} names={getChosenNames(chosenSubject)} />
     </SafeAreaView>
   )
+}
+
+function getChosenNames(chosenSubject) {
+  switch (chosenSubject) {
+    case 0:
+      return [
+        { 'name': 'Quizlet 1', 'id': 1 },
+        { 'name': 'Quizlet 2', 'id': 2 },
+        { 'name': 'Quizlet 3', 'id': 3 },
+      ];
+    case 1:
+      return [
+        { 'name': 'Qui 1', 'id': 1 },
+        { 'name': 'Qulet 2', 'id': 2 },
+        { 'name': 'Quizle 3', 'id': 3 },
+      ];
+    case 2:
+      return [
+        { 'name': 'Quizleytt 1', 'id': 1 },
+        { 'name': 'Quizyrlet 2', 'id': 2 },
+        { 'name': 'Quizrylet 3', 'id': 3 },
+      ];
+    default:
+      return [];
+  }
 }
 
 const styles = StyleSheet.create({
