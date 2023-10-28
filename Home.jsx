@@ -16,7 +16,7 @@ export default function Launch() {
           <Pressable
               style={styles.button}
               onPress={() => setChosenSubject(0)}>
-              <Text style={styles.buttonLabel}>Subject 1</Text>
+              <Text style={styles.buttonLabel}>Biology I Honors</Text>
             </Pressable>
           </View>
       </Card>
@@ -25,7 +25,7 @@ export default function Launch() {
           <Pressable
               style={styles.button}
               onPress={() => setChosenSubject(1)}>
-              <Text style={styles.buttonLabel}>Subject 2</Text>
+              <Text style={styles.buttonLabel}>AP Human Geo</Text>
           </Pressable>
         </View>
       </Card>
@@ -48,7 +48,7 @@ function getChosenNames(chosenSubject) {
   switch (chosenSubject) {
     case 0:
       return [
-        { 'name': 'Quizlet 1', 'id': 1 },
+        { 'name': 'Cell Transport and Energy', 'id': 1 },
         { 'name': 'Quizlet 2', 'id': 2 },
         { 'name': 'Quizlet 3', 'id': 3 },
       ];
@@ -113,14 +113,14 @@ const styles = StyleSheet.create({
   },
   buttonForList: {
     borderRadius: 10,
-    width: '25%',
+    width: '20%',
     height: '10%',
     alignItems: 'center',
     justifyContent: 'center',
     flexDirection: 'row',
   },
   buttonLabel: {
-    fontSize: 15,
+    fontSize: 12,
     fontWeight: 'bold',
     textAlign: 'center',
     position: 'absolute',
