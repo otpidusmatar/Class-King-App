@@ -1,6 +1,7 @@
 import { Component } from 'react';
 import { Text, Pressable, SafeAreaView, StyleSheet, View, ScrollView } from 'react-native';
 import { Card } from 'react-native-paper';
+import { useNavigation } from '@react-navigation/native';
 
 class Subject1Scroll extends Component {
   state = {
@@ -17,7 +18,9 @@ class Subject1Scroll extends Component {
                {
                   this.state.names.map((item, index) => (
                      <View key = {item.id} style = {styles.item}>
-                        <Text>{item.name}</Text>
+                      <Pressable style={styles.buttonForList} onPress={() => this.props.navigation.navigate(item.name)}>
+                        <Text style={styles.buttonLabel}>{item.name}</Text>
+                      </Pressable>
                      </View>
                   ))
                }
@@ -28,10 +31,11 @@ class Subject1Scroll extends Component {
    }
 
 export default function Launch() {
+  const navigation = useNavigation();
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.buttonBarContainer}>
-      <Card>
+      <Card onPress={() => alert('Hi')}>
         <View style={styles.buttonContainer}>
           <Pressable
               style={styles.button}
@@ -40,7 +44,7 @@ export default function Launch() {
             </Pressable>
           </View>
       </Card>
-      <Card>
+      <Card onPress={() => alert('bye')}>
         <View style={styles.buttonContainer}>
           <Pressable
               style={styles.button}
@@ -49,7 +53,7 @@ export default function Launch() {
           </Pressable>
         </View>
       </Card>
-      <Card>
+      <Card onPress={() => alert('bye')}>
         <View style={styles.buttonContainer}>
           <Pressable
               style={styles.button}
@@ -59,7 +63,7 @@ export default function Launch() {
         </View>
       </Card>
       </View>
-      <Subject1Scroll />
+      <Subject1Scroll navigation={navigation} />
     </SafeAreaView>
   )
 }
@@ -99,6 +103,14 @@ const styles = StyleSheet.create({
     padding: 3,
   },
   button: {
+    borderRadius: 10,
+    width: '25%',
+    height: '10%',
+    alignItems: 'center',
+    justifyContent: 'center',
+    flexDirection: 'row',
+  },
+  buttonForList: {
     borderRadius: 10,
     width: '25%',
     height: '10%',
