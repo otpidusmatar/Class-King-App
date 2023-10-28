@@ -1,7 +1,7 @@
-import React from 'react';
+import { Component } from 'react';
 import { ScrollView, View, Text, Pressable, StyleSheet } from 'react-native';
 
-class Subject1Scroll extends React.Component {
+class Subject1Scroll extends Component {
   render() {
     return (
       <View>
@@ -22,31 +22,6 @@ class Subject1Scroll extends React.Component {
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flexDirection: 'column',
-    justifyContent: 'center',
-    backgroundColor: '#ecf0f1',
-    padding: 8,
-  },
-  buttonBarContainer: {
-    flexDirection: 'row',
-    justifyContent: 'center',
-    backgroundColor: '#ecf0f1',
-    padding: 8,
-  },
-  paragraph: {
-    margin: 24,
-    marginBottom: 0,
-    fontSize: 30,
-    fontWeight: 'bold',
-    textAlign: 'center',
-  },
-  subheading: {
-    margin: 24,
-    fontSize: 20,
-    fontWeight: 'bold',
-    textAlign: 'center',
-  },
   buttonContainer: {
     width: 70,
     height: 68,
@@ -79,7 +54,7 @@ const styles = StyleSheet.create({
   },
   item: {
       flexDirection: 'row',
-      justifyContent: 'space-between',
+      justifyContent: 'center',
       alignItems: 'center',
       padding: 30,
       margin: 2,
