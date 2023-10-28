@@ -4,11 +4,6 @@ import { Card } from 'react-native-paper';
 import { useNavigation } from '@react-navigation/native';
 
 class Subject1Scroll extends Component {
-  const [isList1, setIsList1] = useState(true);
-  const [isList2, setIsList2] = useState(false);
-  const [isList3, setIsList3] = useState(false);
-  const [isList4, setIsList4] = useState(false);
-
   state = {
       names: [
          {'name': 'Quizlet 1', 'id': 1},
