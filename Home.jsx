@@ -5,6 +5,7 @@ import { useNavigation } from '@react-navigation/native';
 import SubjectScrollList from './SubjectScrollList.jsx';
 import OptionsToolbar from './OptionsToolbar.jsx';
 import BackgroundImage from './assets/learning-3245793_1280.jpg';
+import DarkBlueButton from './assets/dark-midnight-blue-7287814_1280.png';
 
 export default function Home() {
   const navigation = useNavigation();
@@ -16,29 +17,35 @@ export default function Home() {
       <View style={styles.buttonBarContainer}>
       <Card onPress={() => setChosenSubject(0)}>
         <View style={styles.buttonContainer}>
+          <ImageBackground source={DarkBlueButton} resizeMode={'cover'} style={styles.actualbuttonContainer}>
           <Pressable
               style={styles.button}
               onPress={() => setChosenSubject(0)}>
               <Text style={styles.buttonLabel}>Biology I Honors</Text>
             </Pressable>
+            </ImageBackground>
           </View>
       </Card>
       <Card onPress={() => setChosenSubject(1)}>
         <View style={styles.buttonContainer}>
+        <ImageBackground source={DarkBlueButton} resizeMode={'cover'} style={styles.actualbuttonContainer}>
           <Pressable
               style={styles.button}
               onPress={() => setChosenSubject(1)}>
               <Text style={styles.buttonLabel}>AP Human Geo</Text>
           </Pressable>
+          </ImageBackground>
         </View>
       </Card>
       <Card onPress={() => setChosenSubject(2)}>
         <View style={styles.buttonContainer}>
+        <ImageBackground source={DarkBlueButton} resizeMode={'cover'} style={styles.actualbuttonContainer}>
           <Pressable
               style={styles.button}
               onPress={() => setChosenSubject(2)}>
               <Text style={styles.buttonLabel}>Subject 3</Text>
           </Pressable>
+          </ImageBackground>
         </View>
       </Card>
       </View>
@@ -100,6 +107,14 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     padding: 3,
   },
+  actualbuttonContainer: {
+    width: 107,
+    height: 102,
+    marginHorizontal: 20,
+    alignItems: 'center',
+    justifyContent: 'center',
+    padding: 3,
+  },
   button: {
     borderRadius: 10,
     width: '25%',
@@ -113,5 +128,9 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     textAlign: 'center',
     position: 'absolute',
+    color: 'white',
+    textShadowColor: 'black',
+    textShadowRadius: 1,
+    textShadowOffset: {width: 2, height: 2}
   },
 });
