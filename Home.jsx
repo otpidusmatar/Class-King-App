@@ -1,9 +1,10 @@
 import { useState } from 'react';
-import { Text, Pressable, SafeAreaView, StyleSheet, View } from 'react-native';
+import { Text, Pressable, SafeAreaView, StyleSheet, View, ImageBackground } from 'react-native';
 import { Card } from 'react-native-paper';
 import { useNavigation } from '@react-navigation/native';
 import SubjectScrollList from './SubjectScrollList.jsx';
 import OptionsToolbar from './OptionsToolbar.jsx';
+import BackgroundImage from './assets/learning-3245793_1280.jpg';
 
 export default function Home() {
   const navigation = useNavigation();
@@ -11,6 +12,7 @@ export default function Home() {
 
   return (
     <SafeAreaView style={styles.container}>
+      <ImageBackground source={BackgroundImage} resizeMode={'cover'} style={styles.container}>
       <View style={styles.buttonBarContainer}>
       <Card onPress={() => setChosenSubject(0)}>
         <View style={styles.buttonContainer}>
@@ -41,7 +43,8 @@ export default function Home() {
       </Card>
       </View>
       <SubjectScrollList navigation={navigation} names={getChosenNames(chosenSubject)} />
-      <OptionsToolbar />
+      <OptionsToolbar navigation={navigation} />
+      </ImageBackground>
     </SafeAreaView>
   )
 }
@@ -79,10 +82,14 @@ const styles = StyleSheet.create({
     backgroundColor: '#ecf0f1',
     padding: 8,
   },
+  image: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'flex-end',
+  },
   buttonBarContainer: {
     flexDirection: 'row',
-    justifyContent: 'center',
-    backgroundColor: '#ecf0f1',
+    justifyContent: 'space-between',
     padding: 8,
   },
   buttonContainer: {
