@@ -3,8 +3,9 @@ import { Text, Pressable, SafeAreaView, StyleSheet, View } from 'react-native';
 import { Card } from 'react-native-paper';
 import { useNavigation } from '@react-navigation/native';
 import SubjectScrollList from './SubjectScrollList.jsx';
+import OptionsToolbar from './OptionsToolbar.jsx';
 
-export default function Launch() {
+export default function Home() {
   const navigation = useNavigation();
   const [chosenSubject, setChosenSubject] = useState(0);
 
@@ -40,6 +41,7 @@ export default function Launch() {
       </Card>
       </View>
       <SubjectScrollList navigation={navigation} names={getChosenNames(chosenSubject)} />
+      <OptionsToolbar />
     </SafeAreaView>
   )
 }
@@ -60,9 +62,9 @@ function getChosenNames(chosenSubject) {
       ];
     case 2:
       return [
-        { 'name': 'Quizleytt 1', 'id': 1 },
-        { 'name': 'Quizyrlet 2', 'id': 2 },
-        { 'name': 'Quizrylet 3', 'id': 3 },
+        { 'name': 'Quizlet 1', 'id': 1 },
+        { 'name': 'Quizlet 2', 'id': 2 },
+        { 'name': 'Quizlet 3', 'id': 3 },
       ];
     default:
       return [];
@@ -71,8 +73,9 @@ function getChosenNames(chosenSubject) {
 
 const styles = StyleSheet.create({
   container: {
+    flex: 1,
     flexDirection: 'column',
-    justifyContent: 'center',
+    justifyContent: 'top',
     backgroundColor: '#ecf0f1',
     padding: 8,
   },
