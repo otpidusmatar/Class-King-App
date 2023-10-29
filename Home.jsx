@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Text, Pressable, SafeAreaView, StyleSheet, View } from 'react-native';
 import { Card } from 'react-native-paper';
 import { useNavigation } from '@react-navigation/native';
-import SubjectScrollList from './SubjectScrollList.jsx'
+import SubjectScrollList from './SubjectScrollList.jsx';
 
 export default function Launch() {
   const navigation = useNavigation();
@@ -49,14 +49,14 @@ function getChosenNames(chosenSubject) {
     case 0:
       return [
         { 'name': 'Cell Transport and Energy', 'id': 1 },
-        { 'name': 'Quizlet 2', 'id': 2 },
-        { 'name': 'Quizlet 3', 'id': 3 },
+        { 'name': 'DNA Structure and Replication', 'id': 2 },
+        { 'name': 'Protein Synthesis and Gene Expression/Regulation' },
       ];
     case 1:
       return [
-        { 'name': 'Qui 1', 'id': 1 },
-        { 'name': 'Qulet 2', 'id': 2 },
-        { 'name': 'Quizle 3', 'id': 3 },
+        { 'name': 'North Africa and Southwest Asia Mapping Lab', 'id': 1 },
+        { 'name': 'Latin America Mapping Lab', 'id': 2 },
+        { 'name': 'East Asia Mapping Lab', 'id': 3 },
       ];
     case 2:
       return [
@@ -82,19 +82,6 @@ const styles = StyleSheet.create({
     backgroundColor: '#ecf0f1',
     padding: 8,
   },
-  paragraph: {
-    margin: 24,
-    marginBottom: 0,
-    fontSize: 30,
-    fontWeight: 'bold',
-    textAlign: 'center',
-  },
-  subheading: {
-    margin: 24,
-    fontSize: 20,
-    fontWeight: 'bold',
-    textAlign: 'center',
-  },
   buttonContainer: {
     width: 70,
     height: 68,
@@ -111,28 +98,10 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     flexDirection: 'row',
   },
-  buttonForList: {
-    borderRadius: 10,
-    width: '20%',
-    height: '10%',
-    alignItems: 'center',
-    justifyContent: 'center',
-    flexDirection: 'row',
-  },
   buttonLabel: {
     fontSize: 12,
     fontWeight: 'bold',
     textAlign: 'center',
     position: 'absolute',
   },
-  item: {
-      flexDirection: 'row',
-      justifyContent: 'space-between',
-      alignItems: 'center',
-      padding: 30,
-      margin: 2,
-      borderColor: '#2a4944',
-      borderWidth: 1,
-      backgroundColor: 'white',
-   },
 });
