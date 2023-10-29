@@ -2,6 +2,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Launch from './Launch.jsx';
 import Home from './Home.jsx';
+import Help from './HelpGuide.jsx';
 import BCTE from './quizletpages/biologyhonors/BCellTransportandEnergy.jsx';
 import BDNASR from './quizletpages/biologyhonors/BDNAStructureandReplication.jsx';
 import BPSGER from './quizletpages/biologyhonors/BProteinSynthesisandGeneExpReg.jsx';
@@ -28,6 +29,7 @@ function App() {
       <Stack.Navigator>
         <Stack.Screen name="Launch" component={Launch} />
         <Stack.Screen name="Home" component={Home} />
+        <Stack.Screen name="Help Guide" component={Help} />
         <Stack.Screen name="Cell Transport and Energy" component={BCTE} />
         <Stack.Screen name="DNA Structure and Replication" component={BDNASR} />
         <Stack.Screen name="Protein Synthesis and Gene Expression/Regulation" component={BPSGER} />
