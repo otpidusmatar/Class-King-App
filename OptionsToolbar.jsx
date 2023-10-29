@@ -6,20 +6,20 @@ class OptionsToolbar extends Component {
   render() {
   return (
     <View style={styles.buttonToolbarContainer}>
-        <Card>
+        <Card onPress={() => this.props.navigation.navigate('Home')}>
           <View style={styles.buttonContainer}>
             <Pressable 
               style={styles.button} 
-              onPress={() => alert('hi')}>
+              onPress={() => this.props.navigation.navigate('Home')}>
               <Text style={styles.buttonLabel}>Content</Text>
             </Pressable>
           </View>
         </Card>
-        <Card>
+        <Card onPress={() => this.props.navigation.navigate('Help Guide')}>
           <View style={styles.buttonContainer}>
             <Pressable 
               style={styles.button} 
-              onPress={() => alert('hi')}>
+              onPress={() => this.props.navigation.navigate('Help Guide')}>
               <Text style={styles.buttonLabel}>Help Guide</Text>
             </Pressable>
           </View>
