@@ -5,7 +5,7 @@ import { useNavigation } from '@react-navigation/native';
 import SubjectScrollList from './SubjectScrollList.jsx';
 import OptionsToolbar from './OptionsToolbar.jsx';
 import BackgroundImage from './assets/learning-3245793_1280.jpg';
-import DarkBlueButton from './assets/dark-midnight-blue-7287814_1280.png';
+import DarkBlueButton from './assets/blue-23954_1280.png';
 
 export default function Home() {
   const navigation = useNavigation();
@@ -21,7 +21,7 @@ export default function Home() {
           <Pressable
               style={styles.button}
               onPress={() => setChosenSubject(0)}>
-              <Text style={styles.buttonLabel}>Biology I Honors</Text>
+              <Text style={styles.buttonLabel}>Biology I-H</Text>
             </Pressable>
             </ImageBackground>
           </View>
@@ -60,13 +60,14 @@ function getChosenNames(chosenSubject) {
   switch (chosenSubject) {
     case 0:
       return [
-        { 'name': 'Cell Transport and Energy', 'id': 1 },
-        { 'name': 'DNA Structure and Replication', 'id': 2 },
-        { 'name': 'Protein Synthesis and Gene Expression/Regulation' },
+        { 'name': 'Cell Transport & Energy', 'id': 1 },
+        { 'name': 'DNA Structure & Replication', 'id': 2 },
+        { 'name': 'Protein Synthesis & Gene Expression/Regulation', 'id': 3 },
+        { 'name': 'More Coming Soon!', 'id': 4 },
       ];
     case 1:
       return [
-        { 'name': 'North Africa and Southwest Asia Mapping Lab', 'id': 1 },
+        { 'name': 'North Africa & Southwest Asia Mapping Lab', 'id': 1 },
         { 'name': 'Latin America Mapping Lab', 'id': 2 },
         { 'name': 'East Asia Mapping Lab', 'id': 3 },
       ];
@@ -75,6 +76,7 @@ function getChosenNames(chosenSubject) {
         { 'name': 'Quizlet 1', 'id': 1 },
         { 'name': 'Quizlet 2', 'id': 2 },
         { 'name': 'Quizlet 3', 'id': 3 },
+        { 'name': 'Quizlet 4', 'id': 4 },
       ];
     default:
       return [];
@@ -98,18 +100,19 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     padding: 8,
+    marginBottom: 10,
   },
   buttonContainer: {
-    width: 70,
-    height: 68,
+    width: 85,
+    height: 48,
     marginHorizontal: 20,
     alignItems: 'center',
     justifyContent: 'center',
     padding: 3,
   },
   actualbuttonContainer: {
-    width: 107,
-    height: 102,
+    width: 123,
+    height: 82,
     marginHorizontal: 20,
     alignItems: 'center',
     justifyContent: 'center',
@@ -124,7 +127,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
   },
   buttonLabel: {
-    fontSize: 12,
+    fontSize: 15,
     fontWeight: 'bold',
     textAlign: 'center',
     position: 'absolute',
