@@ -3,6 +3,8 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Launch from './Launch.jsx';
 import Home from './Home.jsx';
 import Help from './HelpGuide.jsx';
+import Howto from './HowToUse.jsx';
+import ContactUs from './ContactUs.jsx';
 import BCTE from './quizletpages/biologyhonors/BCellTransportandEnergy.jsx';
 import BDNASR from './quizletpages/biologyhonors/BDNAStructureandReplication.jsx';
 import BPSGER from './quizletpages/biologyhonors/BProteinSynthesisandGeneExpReg.jsx';
@@ -30,9 +32,11 @@ function App() {
         <Stack.Screen name="Launch" component={Launch} />
         <Stack.Screen name="Home" component={Home} />
         <Stack.Screen name="Help Guide" component={Help} />
-        <Stack.Screen name="Cell Transport and Energy" component={BCTE} />
-        <Stack.Screen name="DNA Structure and Replication" component={BDNASR} />
-        <Stack.Screen name="Protein Synthesis and Gene Expression/Regulation" component={BPSGER} />
+        <Stack.Screen name="How To Use" component={Howto} />
+        <Stack.Screen name="Contact Us" component={ContactUs} />
+        <Stack.Screen name="Cell Transport & Energy" component={BCTE} />
+        <Stack.Screen name="DNA Structure & Replication" component={BDNASR} />
+        <Stack.Screen name="Protein Synthesis & Gene Expression/Regulation" component={BPSGER} />
         <Stack.Screen name="East Asia Mapping Lab" component={EAML} />
         <Stack.Screen name="China SEZs and SARs" component={CSEZSAR} />
         <Stack.Screen name="East Asia Physical Features" component={EAPF} />
@@ -41,12 +45,12 @@ function App() {
         <Stack.Screen name="Physical Features of Latin America" component={LAPF} />
         <Stack.Screen name="Religions and Languages of Latin America" component={LARL} />
         <Stack.Screen name="Latin America: The Why of Where" component={LAWW} />
-        <Stack.Screen name="North Africa and Southwest Asia Mapping Lab" component={NSML} />
-        <Stack.Screen name="Major Cities in North Africa and Southwest Asia" component={NSMC} />
-        <Stack.Screen name="Physical Features of North Africa and Southwest Asia" component={NSPF} />
-        <Stack.Screen name="Disputed Territories of North Africa and Southwest Asia" component={NSDT} />
-        <Stack.Screen name="Saudi Arabia vs. Iran Conflict and Forced Migration" component={NSSIFM} />
-        <Stack.Screen name="North Africa and Southwest Asia: The Why of Where" component={NSWW} />
+        <Stack.Screen name="North Africa & Southwest Asia Mapping Lab" component={NSML} />
+        <Stack.Screen name="Major Cities in North Africa Southwest Asia" component={NSMC} />
+        <Stack.Screen name="Physical Features of North Africa Southwest Asia" component={NSPF} />
+        <Stack.Screen name="North Africa Southwest Asia: Disputed Territories" component={NSDT} />
+        <Stack.Screen name="Saudi Arabia vs. Iran Conflict Forced Migration" component={NSSIFM} />
+        <Stack.Screen name="North Africa Southwest Asia: The Why of Where" component={NSWW} />
       </Stack.Navigator>
     </NavigationContainer>
   );
