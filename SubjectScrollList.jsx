@@ -53,7 +53,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
   },
   buttonLabel: {
-    fontSize: 14,
+    fontSize: 15,
     fontWeight: 'bold',
     textAlign: 'center',
     position: 'absolute',

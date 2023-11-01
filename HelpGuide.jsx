@@ -106,6 +106,6 @@ const styles = StyleSheet.create({
       justifyContent: 'center',
       alignItems: 'center',
       padding: 0,
-      margin: 2,
+      margin: 0,
    },
 });
