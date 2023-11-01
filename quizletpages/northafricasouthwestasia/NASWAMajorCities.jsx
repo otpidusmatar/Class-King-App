@@ -1,23 +1,30 @@
 import { Component } from 'react';
-import { Text, Pressable, SafeAreaView, StyleSheet, View } from 'react-native';
+import { Text, Pressable, SafeAreaView, StyleSheet, View, ImageBackground } from 'react-native';
 import { Card } from 'react-native-paper';
 import { WebView } from 'react-native-webview';
 import { useNavigation } from '@react-navigation/native';
+import OptionsToolbar from '../../OptionsToolbar.jsx';
+import BackgroundImage from '../../assets/learning-3245793_1280.jpg';
 
 class MyInlineWeb extends Component { 
   render() { 
     return ( 
       <WebView 
         originWhitelist={['*']} 
-        source={{ html: '<iframe src="https://quizlet.com/843917604/match/embed?i=23vdrc&x=1jj1" height="1000" width="100%" style="border:0"></iframe>' }} /> 
+        source={{ html: '<iframe src="https://quizlet.com/843917604/match/embed?i=23vdrc&x=1jj1" height="80%" width="100%" style="border:0"></iframe>' }} /> 
     ); 
   }
   } 
 
 export default function NASWAMajorCities() {
+  const navigation = useNavigation();
+
   return (
     <SafeAreaView style={styles.container}>
-      <MyInlineWeb />
+      <ImageBackground source={BackgroundImage} resizeMode={'cover'} style={styles.container}>
+        <MyInlineWeb />
+        <OptionsToolbar navigation={navigation} />
+      </ImageBackground>
     </SafeAreaView>
   )
 }
