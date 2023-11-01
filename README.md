@@ -4,4 +4,6 @@ Class King is an educational resource app designed to provide students with stud
 
 This application is for demonstration purposes and has limited content.
 
+This application was built using Snack Expo and React Native and runs on iOS, Android and Web. The design is ideally made for mobile usage.
+
 Made by Aniket Chakraborty
